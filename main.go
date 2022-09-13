@@ -120,7 +120,7 @@ func notificator() {
 }
 
 func schedule(un UserNotification) {
-	time.Sleep(time.Duration(un.RemindInMinutes) * time.Second)
+	time.Sleep(time.Duration(un.RemindInMinutes) * time.Minute)
 	ch <- un
 }
 
@@ -141,7 +141,7 @@ func UserRestTime(userID int64) uint16 {
 
 func UserWorkTime(userID int64) uint16 {
 	// Here I will get user's working time from DB
-	workTime := uint16(15)
+	workTime := uint16(25)
 	return workTime
 }
 
